@@ -183,6 +183,10 @@ module VCAP::CloudController
       domain.shared? && domain.tcp? && port.present? && port > 0
     end
 
+    def protocol
+      self.domain.protocols[0]
+    end
+
     def internal?
       domain.internal
     end
